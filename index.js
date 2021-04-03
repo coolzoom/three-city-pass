@@ -63,6 +63,59 @@ function initCity(scene) {
             object.name = "city";
         });
 
+     
+
+			/*
+			geometryP1 = new THREE.BoxGeometry(-10,-10,10);	 
+			var materialP1 = new THREE.MeshBasicMaterial( { color: 0x00ff00 ,side:THREE.DoubleSide} );
+			circleP1 = new THREE.Mesh( geometryP1, materialP1 );			
+			var group2 = new THREE.Group();
+			group.add(group2);
+			group2.add(circleP1);*/
+			
+			//readcsv
+			var loader = new THREE.FileLoader(); 
+
+			//load a text file and output the result to the console
+			loader.load(
+				// resource URL
+				'data2.csv',
+				// onLoad callback
+				function ( data ) 
+				{
+					// output the text to the console
+					console.log( data )
+					var csvarry = data.split("\r\n");
+					for(var i = 1;i<csvarry.length;i++)
+					{
+						var data = {};
+						var temp = csvarry[i].split(",");
+						console.log( temp );
+						//adding objects
+						var g = new THREE.BoxGeometry(1,1,1);
+						//var m = new THREE.MeshBasicMaterial( { color: 0x0000ff ,side:THREE.DoubleSide} );
+						var c = new THREE.Mesh( g, material );			
+						//c.position.set(0, 0, 0);
+						var x = parseFloat(temp[0])*1;
+						var y = parseFloat(temp[1])*1;
+						var z = parseFloat(temp[2])*100;
+						console.log( x );
+						console.log( y );
+						console.log( z );
+
+						c.position.set(x,z,y); 
+						//geometryP.rotateY(Math.PI/2);
+						//var group1 = new THREE.Group();
+                        group = new THREE.Group();
+                        scene.add(group);
+						group.add(c);
+					
+					
+					};
+
+				}
+			);
+
     }
     this.animation = function (dalte) {
         if (material) {
