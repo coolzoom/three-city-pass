@@ -64,3 +64,10 @@ material.uniforms.u_r.value += dalte * 100;
 }
 ```
 
+
+## start
+
+- `npm install -g cnpm --registry=https://registry.npm.taobao.org`
+- `set-ExecutionPolicy RemoteSigned` , set all to A
+- `npm install electron-prebuilt -g`
+- `electron .`
