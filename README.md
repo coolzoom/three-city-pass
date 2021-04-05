@@ -71,3 +71,45 @@ material.uniforms.u_r.value += dalte * 100;
 - `set-ExecutionPolicy RemoteSigned` , set all to A
 - `npm install electron-prebuilt -g`
 - `electron .`
+
+
+## deps
+- install node and npm
+`https://nodejs.org/en/download/`
+
+- 换源
+`npm config set registry http://registry.npm.taobao.org`
+
+- 安装yarn(npm 替代工具)
+```
+npm install -g yarn //换源
+
+yarn config get registry  // 查看yarn当前镜像源
+yarn config set registry https://registry.npm.taobao.org/  // 设置yarn镜像源为淘宝镜像
+
+```
+
+- 全局安装electron
+`yarn global add electron`
+
+- 创建app
+`https://www.electronforge.io/`
+`yarn create electron-app my-app`
+
+- 卡住解决方案
+```
+https://blog.csdn.net/xia_yanbing/article/details/113662899
+在Administrator/.npmrc里做如下设置，
+electron_mirror="https://npm.taobao.org/mirrors/electron/"
+如果您使用的是yarn，请将 ~/.npmrc里添加以下配置
+ELECTRON_MIRROR "https://npm.taobao.org/mirrors/electron/"
+```
+
+- 测试
+```
+cd my-app
+yarn start
+```
+
+- 打包
+`yarn make`
